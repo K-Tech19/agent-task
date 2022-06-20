@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 // const formatPostTime = (postTimeStamp) =>{
 
@@ -8,24 +8,28 @@ const mongoose = require("mongoose")
 // }
 
 const commentSchema = new mongoose.Schema(
-    {
-        id: {
-            type: Number,
-        },
-        textBody: {
-            type: Text,
-        },
-        createdAt: {
-            type: new Date().toUTCString,
-        },
-        createdBy: {
-            type: String,
-        },
-        userId: {
-            type: Number,
-        }
-})
+  {
+    id: {
+      type: Number,
+    },
+    textBody: {
+      type: Text,
+    },
+    createdAt: {
+      type: new Date().toUTCString,
+    },
+    createdBy: {
+      type: String,
+    },
+    userId: {
+      type: Number,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const Comment = mongoose.model("Comments", commentSchema);
 
-export default Comment
+export default Comment;

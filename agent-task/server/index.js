@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
-const userController = require("./controllers/User")
-const tasksController = require("./controllers/Tasks")
-const commentsController = require("./controllers/Comments")
+const parser = require("body-parser")
+const userController = require("./controllers/user")
+const tasksController = require("./controllers/tasks")
+const commentsController = require("./controllers/comments")
 
 
 app.get('/',(req,res)=>{
@@ -14,6 +15,10 @@ app.use("/user", userController);
 app.use("/tasks", tasksController);
 app.use("/comments", commentsController);
 // app.use("/user", userController);
+
+//middleware
+app.use(parser.urlencoded({extended: true}))
+app.use(parser.json())
 
 const PORT = 8000
 

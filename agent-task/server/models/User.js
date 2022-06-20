@@ -1,12 +1,29 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema({
-    id: Number,
-    username: String,
-    timezone: Number,
-    email: String,
-    password: String,
-    avatar: String
+const userSchema = new mongoose.Schema(
+    {
+        id: {
+            type: Number,
+            require:[true, "Please provide a user name signup"]
+        },
+        username: {
+            type:String,
+            require:[true, "Please provide a email to signup"],
+        },
+        timezone: {
+            type: Number,
+        },
+        email: {
+            type: String,
+            require: [true, "Please provide a valid email to signup"]
+        },
+        password: {
+            type: String,
+            require: [true, "Please provide a password to signup"]
+        },
+        avatar: {
+            type:String,
+        }
 })
 
 const User = mongoose.model("User", userSchema);

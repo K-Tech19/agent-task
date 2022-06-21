@@ -4,14 +4,14 @@ const userSchema = new mongoose.Schema(
   {
     id: {
       type: Number,
-      require: [true, "Please provide a user name signup"],
+      // require: [true, "Please provide a user name signup"],
     },
     username: {
       type: String,
       require: [true, "Please provide a email to signup"],
     },
     timezone: {
-      type: Number,
+      type: String,
     },
     email: {
       type: String,
@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      require: [true, "Please provide a password to signup"],
+      // require: [true, "Please provide a password to signup"],
     },
     avatar: {
       type: String,
@@ -32,4 +32,4 @@ const userSchema = new mongoose.Schema(
 
 const User = mongoose.model("User", userSchema);
 
-export default User;
+module.exports = User;

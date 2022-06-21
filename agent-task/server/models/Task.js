@@ -1,9 +1,13 @@
+
 const mongoose = require("mongoose");
 
 const taskSchema = new mongoose.Schema(
   {
     id: {
       type: Number,
+    },
+    title: {
+      type: String,
     },
     taskNumber: {
       type: Number,
@@ -15,7 +19,7 @@ const taskSchema = new mongoose.Schema(
       type: Boolean,
     },
     date: {
-      type: new Date().toUTCString,
+      type: Date, default: Date.now
     },
     currentlyActive: {
       type: Boolean,
@@ -28,4 +32,4 @@ const taskSchema = new mongoose.Schema(
 
 const Task = mongoose.model("Task", taskSchema);
 
-export default Task;
+module.exports = Task;

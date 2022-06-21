@@ -13,10 +13,10 @@ const commentSchema = new mongoose.Schema(
       type: Number,
     },
     textBody: {
-      type: Text,
+      type: String,
     },
     createdAt: {
-      type: new Date().toUTCString,
+      type: Date, default: Date.now
     },
     createdBy: {
       type: String,
@@ -32,4 +32,4 @@ const commentSchema = new mongoose.Schema(
 
 const Comment = mongoose.model("Comments", commentSchema);
 
-export default Comment;
+module.exports = Comment

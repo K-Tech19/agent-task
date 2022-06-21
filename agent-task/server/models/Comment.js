@@ -22,6 +22,7 @@ const commentSchema = new mongoose.Schema(
       type: String,
     },
     userId: {
+      // ref: "",
       type: Number,
     },
   },

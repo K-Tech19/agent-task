@@ -19,7 +19,7 @@ User.deleteMany({}).then(()=>{
                 timezone: "Est",
                 password: "fishfood",
                 avatar: "Avatar images"
-            }).then( kTech =>{
+            }).then(() =>{
                 Task.create({
                     title: "Fish @ 3pm",
                     taskNumber: "2",

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = Promise
 
 // set uri for the connectino to out local mongodb
-const mongoURI = 'mongodb://localhost/{placeholder}'
+const mongoURI = "mongodb://localhost:27017/tasks";
 
 // connect to the database, with is imported mongoose instance
 

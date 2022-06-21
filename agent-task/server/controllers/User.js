@@ -1,4 +1,5 @@
 const express = require("express");
+const User = require("../models/User");
 const router = express.Router()
 
 
@@ -8,9 +9,12 @@ router.get("/", (req,res)=>{
 })
 
 router.post("/",(req,res)=>{
-    let newTask = req.body
-    console.log(newTask)
-    res.json(newTask)
+    let newUser = req.body
+    // console.log(newUser)
+    
+    User.create(newUser).then((created )=>{
+        res.json(created)
+    })
 })
 
 
